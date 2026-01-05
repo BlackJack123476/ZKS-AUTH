@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZKS Auth - Rockstar Games Authenticator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">ZKS Auth</h1>
+            <p class="subtitle">Secure Authentication & System Optimization</p>
+        </header>
+
+
+
+        <main class="main-content">
+            <!-- 2FA Authentication -->
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <div class="shield-icon">🛡️</div>
+                        <h2>2FA Authentication</h2>
+                        <p>Paste the account's 2FA secret key below to generate a solid 6-digit code.</p>
+                    </div>
+
+                    <div class="auth-form">
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="secret-key" 
+                                placeholder="Enter 2FA secret key"
+                                class="secret-input"
+                            >
+                        </div>
+
+                        <button id="generate-btn" class="generate-btn">
+                            Generate 2FA Code
+                        </button>
+
+                        <div id="code-display" class="code-display hidden">
+                            <div class="code-value" id="code-value">000000</div>
+                            <div class="timer-container">
+                                <div class="timer-text">Code refreshes automatically on expiry</div>
+                                <div class="timer-bar">
+                                    <div class="timer-progress" id="timer-progress"></div>
+                                </div>
+                                <div class="timer-text">Expires in <span id="timer-seconds">30</span> seconds</div>
+                            </div>
+                        </div>
+
+                        <div class="instructions">
+                            <div class="instruction-item">
+                                <span class="step-number">1.</span>
+                                <span class="step-text">Paste Secret Key: Enter your 2FA secret key in the input field.</span>
+                            </div>
+                            <div class="instruction-item">
+                                <span class="step-number">2.</span>
+                                <span class="step-text">Generate Code: Click "Generate 2FA Code" to get your code.</span>
+                            </div>
+                            <div class="instruction-item">
+                                <span class="step-number">3.</span>
+                                <span class="step-text">Use Code: The code expires every 30 seconds.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 ZKS Auth. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="totp.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
